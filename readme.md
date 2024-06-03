@@ -12,6 +12,8 @@ go get github.com/mateothegreat/go-ffprobe
 
 Given the following:
 
+### Local File
+
 ```go
 probe, err := Probe("/Users/matthewdavis/workspace/media/bunny.mp4")
 if err != nil {
@@ -20,7 +22,17 @@ if err != nil {
 fmt.Println(probe)
 ```
 
-The output will be:
+### RTSP Stream
+
+```go
+probe, err := Probe("rtsp://admin:admin@192.168.1.97:554")
+if err != nil {
+  log.Fatal(err)
+}
+fmt.Println(probe)
+```
+
+The output will be something along the lines of:
 
 ```bash
 ~/workspace/nvr.ai/go-ffmpeg ➜ go test ./... -v
@@ -34,7 +46,7 @@ PASS
 ok      github.com/nvr-ai/go-ffmpeg/ffprobe     1.942s
 ```
 
-Based on the ffprobe output:
+Based on the `ffprobe` output:
 
 ```json
 {
