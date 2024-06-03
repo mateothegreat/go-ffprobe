@@ -5,7 +5,7 @@ This package provides a simple golang API to the `ffprobe` command line tool.
 ## Installation
 
 ```bash
-go get github.com/mateothegreat/go-ffprobe@0.0.2
+go get github.com/mateothegreat/go-ffprobe
 ```
 
 ## Usage
